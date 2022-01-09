@@ -9,7 +9,7 @@ jobs:
     working_directory: ~/rails-docker-tkitik/src
     steps:
       - checkout:
-        path: ~/rails-docker-tkitik
+          path: ~/rails-docker-tkitik
       - ruby/install-deps
 
   test:
@@ -28,14 +28,14 @@ jobs:
     working_directory: ~/rails-docker-tkitik/src
     steps:
       - checkout:
-        path: ~/rails-docker-tkitik
+          path: ~/rails-docker-tkitik
       - ruby/install-deps
       - run:
-        name: Database setup
-        command: bundle exec rails db:migrate
+          name: Database setup
+          command: bundle exec rails db:migrate
       - run:
-        name: test
-        command: bundle exec rake test
+          name: test
+          command: bundle exec rake test
 
 workflows:
   version: 2
